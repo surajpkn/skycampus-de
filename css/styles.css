@@ -245,10 +245,11 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
   flex-direction: column;
   align-items: center;
   line-height: 1;
-  gap: 1px;
+  gap: 2px;
+  flex-shrink: 0;
 }
 .sky-logo__sky {
-  font-size: 1.55rem;
+  font-size: 2rem;
   font-weight: 900;
   color: var(--white);
   letter-spacing: -.04em;
@@ -257,9 +258,9 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 }
 .nav.scrolled .sky-logo__sky { color: var(--sky); }
 .sky-logo__campus {
-  font-size: .42rem;
+  font-size: .55rem;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: .2em;
   color: var(--white);
   text-transform: uppercase;
   transition: var(--transition);
@@ -268,10 +269,10 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 .sky-logo__country {
   background: rgba(255,255,255,.95);
   color: var(--sky);
-  font-size: .38rem;
+  font-size: .48rem;
   font-weight: 800;
-  letter-spacing: .14em;
-  padding: 2px 6px;
+  letter-spacing: .16em;
+  padding: 2px 8px;
   border-radius: 2px;
   text-transform: uppercase;
   width: 100%;
