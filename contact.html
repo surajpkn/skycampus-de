@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kontakt – SKY Campus Deutschland e.V., Charlottenstraße 14, 52070 Aachen." />
+  <title>Kontakt – SKY Campus Deutschland e.V.</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230096C7'/><text y='24' x='4' font-size='20' font-weight='900' fill='white' font-family='Inter,sans-serif'>S</text></svg>" />
+  <style>
+    .option-card {
+      background: var(--white);
+      border: 1.5px solid var(--grey-100);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .option-card:hover, .option-card.selected {
+      border-color: var(--sky);
+      background: rgba(0,150,199,.04);
+      box-shadow: var(--shadow-sm);
+    }
+    .option-card.selected { background: rgba(0,150,199,.06); }
+    .option-card__icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .option-card__title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
+    .option-card__sub   { font-size: .82rem; color: var(--grey-500); line-height: 1.5; }
+
+    .success-msg {
+      display: none;
+      background: linear-gradient(135deg, var(--sky), var(--navy-mid));
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      text-align: center;
+      color: var(--white);
+    }
+    .success-msg.visible { display: block; }
+    .success-msg .checkmark {
+      width: 64px; height: 64px;
+      background: rgba(255,255,255,.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+    .success-msg h3 { color: var(--white); margin-bottom: 10px; }
+    .success-msg p  { color: rgba(255,255,255,.75); }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="sky-logo">
+        <div class="sky-logo__sky">sky</div>
+        <div class="sky-logo__campus">CAMPUS</div>
+        <div class="sky-logo__country">GERMANY</div>
+      </div>
+    </a>
+    <ul class="nav__links" style="list-style:none;display:flex;align-items:center;gap:4px">
+      <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">Über uns</a></li>
+      <li><a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a></li>
+      <li><a href="research.html" class="nav__link" data-i18n="nav.research">Forschung</a></li>
+      <li><a href="contact.html" class="nav__link active" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <div class="nav__cta"><a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a></div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile" id="mobileNav" style="display:none">
+    <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+    <a href="about.html" class="nav__link" data-i18n="nav.about">Über uns</a>
+    <a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a>
+    <a href="research.html" class="nav__link" data-i18n="nav.research">Forschung</a>
+    <a href="contact.html" class="nav__link active" data-i18n="nav.contact">Kontakt</a>
+    <a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a>
+  </nav>
+</nav>
+
+<!-- ── Page Hero ── -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="label" data-i18n="con.hero.label">Kontakt aufnehmen</span>
+      <h1 data-i18n="con.hero.h1">Wir freuen uns, von dir zu hören</h1>
+      <p data-i18n="con.hero.p">Ob Kursanmeldung, Hochschulpartnerschaft oder allgemeine Fragen – unser Team antwortet innerhalb von 24 Stunden.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Section ── -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div class="animate-fade-up">
+        <span class="label" data-i18n="con.info.label">Direkter Kontakt</span>
+        <h2 style="margin-top:12px;margin-bottom:16px" data-i18n="con.info.h2">So erreichst du uns</h2>
+        <p data-i18n="con.info.p">Wir sind ein kleines, engagiertes Team und nehmen uns Zeit für jede Anfrage. Schreib uns – wir melden uns schnell!</p>
+
+        <div style="margin-top:36px;display:flex;flex-direction:column;gap:20px">
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📍</div>
+            <div class="contact-detail__text">
+              <div class="contact-detail__label" data-i18n="con.addr.label">Adresse</div>
+              <div class="contact-detail__value">Charlottenstraße 14<br />52070 Aachen, Deutschland</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">✉️</div>
+            <div class="contact-detail__text">
+              <div class="contact-detail__label" data-i18n="con.email.label">E-Mail</div>
+              <div class="contact-detail__value">
+                <a href="mailto:info@skycampus.de" style="color:var(--sky)">info@skycampus.de</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">📞</div>
+            <div class="contact-detail__text">
+              <div class="contact-detail__label" data-i18n="con.phone.label">Telefon</div>
+              <div class="contact-detail__value" data-i18n="con.phone.val">Auf Anfrage per E-Mail</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">🕐</div>
+            <div class="contact-detail__text">
+              <div class="contact-detail__label" data-i18n="con.resp.label">Reaktionszeit</div>
+              <div class="contact-detail__value" data-i18n="con.resp.val">In der Regel innerhalb von 24 Stunden</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div style="margin-top:36px">
+          <div class="map-embed">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=6.075,50.770,6.085,50.775&layer=mapnik&marker=50.7727,6.0800"
+              allowfullscreen
+              loading="lazy"
+              title="SKY Campus Deutschland – Charlottenstraße 14, Aachen">
+            </iframe>
+          </div>
+          <p style="font-size:.8rem;color:var(--grey-500);margin-top:8px;text-align:center">
+            Charlottenstraße 14, 52070 Aachen ·
+            <a href="https://www.openstreetmap.org/?mlat=50.7727&mlon=6.0800#map=17/50.7727/6.0800" target="_blank" rel="noopener" style="color:var(--sky)">Größere Karte</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="animate-fade-up animate-delay-2">
+        <div class="contact-form" id="contactFormWrap">
+
+          <!-- Intent selection -->
+          <div id="intentStep">
+            <h3 style="margin-bottom:6px" data-i18n="con.form.h3">Wie können wir helfen?</h3>
+            <p style="font-size:.9rem;color:var(--grey-500);margin-bottom:24px" data-i18n="con.form.sub">Wähle das passende Thema, damit wir dich optimal weiterleiten können.</p>
+
+            <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+              <div class="option-card" onclick="selectIntent(this,'Kursanmeldung')">
+                <div class="option-card__icon">🎓</div>
+                <div>
+                  <div class="option-card__title" data-i18n="con.opt1.title">Kursanmeldung</div>
+                  <div class="option-card__sub" data-i18n="con.opt1.sub">Ich möchte an einem SKY-Kurs teilnehmen und mehr über verfügbare Termine erfahren.</div>
+                </div>
+              </div>
+              <div class="option-card" onclick="selectIntent(this,'Hochschulpartnerschaft')">
+                <div class="option-card__icon">🏛️</div>
+                <div>
+                  <div class="option-card__title" data-i18n="con.opt2.title">Hochschulpartnerschaft</div>
+                  <div class="option-card__sub" data-i18n="con.opt2.sub">Ich vertreten eine Hochschule und möchte SKY Campus an unserer Institution einführen.</div>
+                </div>
+              </div>
+              <div class="option-card" onclick="selectIntent(this,'Trainer werden')">
+                <div class="option-card__icon">✨</div>
+                <div>
+                  <div class="option-card__title" data-i18n="con.opt3.title">Trainer werden</div>
+                  <div class="option-card__sub" data-i18n="con.opt3.sub">Ich interessiere mich für die Trainer-Ausbildung und möchte das Programm weitergeben.</div>
+                </div>
+              </div>
+              <div class="option-card" onclick="selectIntent(this,'Allgemeine Anfrage')">
+                <div class="option-card__icon">💬</div>
+                <div>
+                  <div class="option-card__title" data-i18n="con.opt4.title">Allgemeine Anfrage</div>
+                  <div class="option-card__sub" data-i18n="con.opt4.sub">Ich habe eine andere Frage oder möchte einfach mehr erfahren.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <input type="hidden" id="intentField" name="intent" value="" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName" data-i18n="con.lbl.first">Vorname *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Anna" data-i18n-placeholder="con.ph.first" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName" data-i18n="con.lbl.last">Nachname *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Müller" data-i18n-placeholder="con.ph.last" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="con.lbl.email">E-Mail-Adresse *</label>
+              <input type="email" id="email" name="email" placeholder="anna.mueller@rwth-aachen.de" data-i18n-placeholder="con.ph.email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="university" data-i18n="con.lbl.uni">Hochschule / Institution</label>
+              <input type="text" id="university" name="university" placeholder="RWTH Aachen, TU Berlin, …" data-i18n-placeholder="con.ph.uni" />
+            </div>
+
+            <div class="form-group">
+              <label for="role" data-i18n="con.lbl.role">Ich bin …</label>
+              <select id="role" name="role">
+                <option value="" data-i18n="con.role.s">Bitte auswählen</option>
+                <option data-i18n="con.role.1">Studierender / Studierende</option>
+                <option data-i18n="con.role.2">Wissenschaftliche/r Mitarbeiter/in</option>
+                <option data-i18n="con.role.3">Professorin / Professor</option>
+                <option data-i18n="con.role.4">Hochschulmitarbeiter/in</option>
+                <option data-i18n="con.role.5">Sonstiges</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="con.lbl.msg">Nachricht *</label>
+              <textarea id="message" name="message" placeholder="Erzähl uns von deinem Anliegen …" data-i18n-placeholder="con.ph.msg" required></textarea>
+            </div>
+
+            <div class="form-group" style="display:flex;gap:10px;align-items:flex-start">
+              <input type="checkbox" id="privacy" name="privacy" required style="width:auto;margin-top:3px;flex-shrink:0" />
+              <label for="privacy" style="font-weight:400;font-size:.85rem;cursor:pointer" data-i18n="con.privacy">
+                Ich habe die <a href="datenschutz.html" style="color:var(--sky)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. *
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--primary form-submit">
+              <span data-i18n="con.submit">Nachricht senden</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+
+          <!-- Success -->
+          <div class="success-msg" id="successMsg">
+            <div class="checkmark">✓</div>
+            <h3 data-i18n="con.success.h3">Nachricht gesendet!</h3>
+            <p data-i18n="con.success.p">Vielen Dank für deine Nachricht. Wir melden uns innerhalb von 24 Stunden bei dir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Alternative Contact ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="con.alt.label">Weitere Möglichkeiten</span>
+      <h2 data-i18n="con.alt.h2">Andere Wege zu uns</h2>
+    </div>
+
+    <div class="grid-3" style="margin-top:48px">
+      <div class="card animate-fade-up animate-delay-1">
+        <div class="card__body" style="text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:16px">🎓</div>
+          <h4 style="margin-bottom:10px" data-i18n="con.alt1.h4">Für Studierende</h4>
+          <p style="font-size:.9rem" data-i18n="con.alt1.p">Schau bei unserem nächsten Kurs vorbei oder schreib uns direkt für eine persönliche Beratung.</p>
+          <a href="programs.html" class="btn btn--primary" style="margin-top:20px;width:100%;justify-content:center" data-i18n="con.alt1.btn">Zu den Programmen</a>
+        </div>
+      </div>
+      <div class="card animate-fade-up animate-delay-2">
+        <div class="card__body" style="text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:16px">🏛️</div>
+          <h4 style="margin-bottom:10px" data-i18n="con.alt2.h4">Für Hochschulen</h4>
+          <p style="font-size:.9rem" data-i18n="con.alt2.p">Interessierst du dich für eine Partnerschaft? Wir kommen gerne für eine unverbindliche Präsentation zu euch.</p>
+          <a href="mailto:partnership@skycampus.de" class="btn btn--primary" style="margin-top:20px;width:100%;justify-content:center" data-i18n="con.alt2.btn">Partnership anfragen</a>
+        </div>
+      </div>
+      <div class="card animate-fade-up animate-delay-3">
+        <div class="card__body" style="text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:16px">🔬</div>
+          <h4 style="margin-bottom:10px" data-i18n="con.alt3.h4">Für Forschende</h4>
+          <p style="font-size:.9rem" data-i18n="con.alt3.p">Möchtest du Forschung zu SKY-Methoden an deiner Einrichtung durchführen? Wir unterstützen aktiv.</p>
+          <a href="mailto:research@skycampus.de" class="btn btn--primary" style="margin-top:20px;width:100%;justify-content:center" data-i18n="con.alt3.btn">Forschungskooperation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">
+          <div class="sky-logo">
+            <div class="sky-logo__sky">sky</div>
+            <div class="sky-logo__campus">CAMPUS</div>
+            <div class="sky-logo__country">GERMANY</div>
+          </div>
+        </div>
+        <p class="footer__tagline" data-i18n="footer.tagline">Wissenschaftlich fundierte Wohlbefinden- und Resilienzprogramme für Hochschulen in Deutschland.</p>
+        <address class="footer__address">Charlottenstraße 14<br />52070 Aachen<br />Deutschland</address>
+        <p class="footer__reg" data-i18n="footer.reg">Eingetragener Verein · SKY Campus Deutschland e.V.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.prog">Programme</h4>
+        <ul class="footer__links">
+          <li><a href="programs.html" data-i18n="footer.prog1">SKY Happiness Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog2">Lehrenden-Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog3">Advanced Meditation</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog4">Leadership-Programm</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.org">Organisation</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" data-i18n="footer.org1">Über uns</a></li>
+          <li><a href="research.html" data-i18n="footer.org3">Forschung</a></li>
+          <li><a href="contact.html" data-i18n="footer.org4">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.legal">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="impressum.html" data-i18n="footer.legal1">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="footer.legal2">Datenschutz</a></li>
+          <li><a href="agb.html" data-i18n="footer.legal3">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 SKY Campus Deutschland e.V. Alle Rechte vorbehalten.</span>
+      <div class="footer__legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+<script>
+  function selectIntent(card, value) {
+    document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    document.getElementById('intentField').value = value;
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('successMsg');
+    form.style.display = 'none';
+    document.getElementById('intentStep').style.display = 'none';
+    success.classList.add('visible');
+  }
+</script>
+</body>
+</html>

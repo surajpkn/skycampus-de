@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SKY Campus Deutschland e.V. – Das umfassende Wohlbefinden- und Resilienzprogramm für Hochschulen in Deutschland. Atemübungen, Meditation, emotionale Intelligenz und mehr." />
+  <meta property="og:title" content="SKY Campus Deutschland e.V." />
+  <meta property="og:description" content="Total Well-Being Program für Hochschulen in Deutschland." />
+  <meta property="og:type" content="website" />
+  <title>SKY Campus Deutschland e.V. – Total Well-Being für Hochschulen</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230096C7'/><text y='24' x='4' font-size='20' font-weight='900' fill='white' font-family='Inter,sans-serif'>S</text></svg>" />
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="sky-logo">
+        <div class="sky-logo__sky">sky</div>
+        <div class="sky-logo__campus">CAMPUS</div>
+        <div class="sky-logo__country">GERMANY</div>
+      </div>
+    </a>
+
+    <ul class="nav__links" style="list-style:none;display:flex;align-items:center;gap:4px">
+      <li><a href="index.html" class="nav__link active" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">Über uns</a></li>
+      <li><a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a></li>
+      <li><a href="research.html" class="nav__link" data-i18n="nav.research">Forschung</a></li>
+      <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+
+    <div class="nav__cta">
+      <a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav__mobile" id="mobileNav" style="display:none">
+    <a href="index.html" class="nav__link active" data-i18n="nav.home">Home</a>
+    <a href="about.html" class="nav__link" data-i18n="nav.about">Über uns</a>
+    <a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a>
+    <a href="research.html" class="nav__link" data-i18n="nav.research">Forschung</a>
+    <a href="contact.html" class="nav__link" data-i18n="nav.contact">Kontakt</a>
+    <a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a>
+  </nav>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero" id="hero">
+  <div class="hero__glow hero__glow--1"></div>
+  <div class="hero__glow hero__glow--2"></div>
+
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="label animate-fade-up" data-i18n="home.hero.label">SKY Campus Deutschland e.V.</span>
+      <h1 class="hero__title animate-fade-up animate-delay-1">
+        <span data-i18n="home.hero.h1a">Total Well-Being</span><br />
+        <span data-i18n="home.hero.h1b">für Hochschulen</span><br />
+        <span data-i18n="home.hero.h1c">in Deutschland</span>
+      </h1>
+      <p class="hero__subtitle animate-fade-up animate-delay-2" data-i18n="home.hero.sub">
+        Wissenschaftlich fundierte Atem- und Meditationsprogramme, die Studierenden, Lehrenden und Mitarbeitenden helfen, ihr volles Potenzial zu entfalten.
+      </p>
+      <div class="hero__actions animate-fade-up animate-delay-3">
+        <a href="programs.html" class="btn btn--primary">
+          <span data-i18n="home.hero.btn1">Programme entdecken</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="research.html" class="btn btn--outline" data-i18n="home.hero.btn2">Forschung ansehen</a>
+      </div>
+
+      <div class="hero__stats animate-fade-up animate-delay-4">
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="650">0</span>
+          <span class="hero__stat-label" data-i18n="home.hero.stat1">Tausende Teilnehmer weltweit</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="145">0</span>
+          <span class="hero__stat-label" data-i18n="home.hero.stat2">Universitäten weltweit</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="30">0</span>
+          <span class="hero__stat-label" data-i18n="home.hero.stat3">Jahre Erfahrung</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="625">0</span>
+          <span class="hero__stat-label" data-i18n="home.hero.stat4">Zertifizierte Trainer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__card-stack">
+        <div class="hero__main-card">
+          <div class="sky-icon">🌬️</div>
+          <h3 data-i18n="home.hero.card.h3">Sudarshan Kriya</h3>
+          <p data-i18n="home.hero.card.p">Das einzigartige, rhythmische Atemmuster, das Körper, Geist und Seele in Einklang bringt.</p>
+        </div>
+        <div class="hero__badge hero__badge--1">
+          <span class="emoji">🎓</span>
+          <div class="hero__badge-text">
+            <div class="hero__badge-title" data-i18n="home.hero.badge1a">RWTH Aachen</div>
+            <div class="hero__badge-sub" data-i18n="home.hero.badge1b">Partnerhochschule</div>
+          </div>
+        </div>
+        <div class="hero__badge hero__badge--2">
+          <span class="emoji">⭐</span>
+          <div class="hero__badge-text">
+            <div class="hero__badge-title" data-i18n="home.hero.badge2a">Yale & Stanford</div>
+            <div class="hero__badge-sub" data-i18n="home.hero.badge2b">Forschungspartner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
+    <div class="hero__scroll-line"></div>
+    <span data-i18n="home.hero.scroll">Mehr entdecken</span>
+  </div>
+</section>
+
+<!-- ── Trust Bar ── -->
+<div class="trust-bar" id="intro">
+  <div class="container">
+    <div class="trust-bar__inner">
+      <span class="trust-bar__label" data-i18n="home.trust.label">Vertrauen von</span>
+      <div class="trust-bar__logos">
+        <span class="trust-bar__logo">RWTH Aachen</span>
+        <span class="trust-bar__logo">Yale University</span>
+        <span class="trust-bar__logo">Stanford University</span>
+        <span class="trust-bar__logo">UPenn</span>
+        <span class="trust-bar__logo">TU Berlin</span>
+        <span class="trust-bar__logo">LMU München</span>
+        <span class="trust-bar__logo">Heidelberg</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── About Intro ── -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2">
+      <div class="about-visual animate-fade-up">
+        <div class="about-visual__main">
+          <div class="about-visual__quote">
+            <blockquote data-i18n="home.about.quote">
+              "SKY Campus hat mein Studium komplett verändert. Ich handle Stress jetzt ganz anders und fühle mich so viel ausgeglichener."
+            </blockquote>
+            <cite data-i18n="home.about.cite">— Leila M., Maschinenbau, RWTH Aachen</cite>
+          </div>
+        </div>
+        <div class="about-accent">🌅</div>
+      </div>
+
+      <div class="about-content animate-fade-up animate-delay-2">
+        <span class="label" data-i18n="home.about.label">Unsere Mission</span>
+        <h2 data-i18n="home.about.h2">Wohlbefinden an der Hochschule neu definieren</h2>
+        <p data-i18n="home.about.p1">
+          SKY Campus Deutschland e.V. bringt das bewährte SKY-Programm an deutsche Hochschulen. Wir verbinden antike Weisheit mit moderner Wissenschaft, um Studierenden und Lehrenden wirksame Werkzeuge für ein erfülltes, resilientes Leben zu geben.
+        </p>
+        <p data-i18n="home.about.p2">
+          Unsere evidenzbasierten Methoden – insbesondere die Sudarshan Kriya – sind durch Dutzende von Studien an weltweit führenden Universitäten belegt und helfen dabei, Stress abzubauen, den Fokus zu stärken und soziale Verbundenheit zu fördern.
+        </p>
+        <ul class="checklist">
+          <li data-i18n="home.about.check1">Von Yale, Stanford und Penn University validiert</li>
+          <li data-i18n="home.about.check2">Über 650.000 Teilnehmer weltweit</li>
+          <li data-i18n="home.about.check3">Zertifizierte Trainer an jeder Partneruniversität</li>
+          <li data-i18n="home.about.check4">Vollständig kostenlos für Studierende</li>
+          <li data-i18n="home.about.check5">Anerkannt von deutschen Hochschulverbänden</li>
+        </ul>
+        <a href="about.html" class="btn btn--ghost">
+          <span data-i18n="home.about.btn">Mehr über uns</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Pillars ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="home.pillars.label">Unser Ansatz</span>
+      <h2 data-i18n="home.pillars.h2">Die fünf Säulen des SKY-Programms</h2>
+      <p data-i18n="home.pillars.sub">Ein holistischer Ansatz, der alle Dimensionen menschlichen Wohlbefindens adressiert – wissenschaftlich fundiert und praxiserprobt.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar animate-fade-up animate-delay-1">
+        <span class="pillar__num">01</span>
+        <div class="pillar__icon">🌬️</div>
+        <h3 data-i18n="home.p1.h3">Atemübungen &amp; Meditation</h3>
+        <p data-i18n="home.p1.p">Die Sudarshan Kriya – ein einzigartiges, rhythmisches Atemmuster – reinigt Körper und Geist auf tiefer zellulärer Ebene und erzeugt nachhaltige innere Ruhe.</p>
+      </div>
+
+      <div class="pillar animate-fade-up animate-delay-2">
+        <span class="pillar__num">02</span>
+        <div class="pillar__icon">🧠</div>
+        <h3 data-i18n="home.p2.h3">Emotionale Intelligenz</h3>
+        <p data-i18n="home.p2.p">Entwickle Selbstwahrnehmung, Empathie und soziale Fähigkeiten, die dir in Studium, Beruf und Leben zugutekommen – messbar und nachhaltig.</p>
+      </div>
+
+      <div class="pillar animate-fade-up animate-delay-3">
+        <span class="pillar__num">03</span>
+        <div class="pillar__icon">🤝</div>
+        <h3 data-i18n="home.p3.h3">Inklusion &amp; Zugehörigkeit</h3>
+        <p data-i18n="home.p3.p">Erlebe echte Gemeinschaft. Unsere Programme bauen Brücken über Kulturen, Fachbereiche und Hintergründe hinweg und fördern ein starkes Wir-Gefühl.</p>
+      </div>
+
+      <div class="pillar animate-fade-up animate-delay-1">
+        <span class="pillar__num">04</span>
+        <div class="pillar__icon">🌱</div>
+        <h3 data-i18n="home.p4.h3">Service &amp; Lernen</h3>
+        <p data-i18n="home.p4.p">Durch Service-Learning und gesellschaftliches Engagement entwickeln Teilnehmer Verantwortungsbewusstsein und geben ihre Erfahrungen aktiv weiter.</p>
+      </div>
+
+      <div class="pillar animate-fade-up animate-delay-2">
+        <span class="pillar__num">05</span>
+        <div class="pillar__icon">🏆</div>
+        <h3 data-i18n="home.p5.h3">Führung &amp; Purpose</h3>
+        <p data-i18n="home.p5.p">Klares inneres Führungsverständnis, Resilienz und ein tiefes Gefühl für den eigenen Lebensweg bilden die Grundlage für nachhaltige Wirkung in der Welt.</p>
+      </div>
+
+      <div class="pillar animate-fade-up animate-delay-3" style="background:linear-gradient(135deg,var(--sky) 0%,var(--navy-mid) 100%);color:var(--white);">
+        <span class="pillar__num" style="color:rgba(255,255,255,.08)">→</span>
+        <div class="pillar__icon">✨</div>
+        <h3 style="color:var(--white)" data-i18n="home.p6.h3">Alle Programme ansehen</h3>
+        <p style="color:rgba(255,255,255,.75)" data-i18n="home.p6.p">Entdecke unsere vollständigen Kursangebote für Studierende, Lehrende und Hochschulmitarbeitende.</p>
+        <a href="programs.html" class="btn btn--outline" style="margin-top:20px;display:inline-flex;">
+          <span data-i18n="home.p6.btn">Programme entdecken</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Impact Stats ── -->
+<section class="stats-section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px">
+      <span class="label" style="color:var(--gold-light)" data-i18n="home.stats.label">Globale Wirkung</span>
+      <h2 style="color:var(--white);margin-top:8px" data-i18n="home.stats.h2">Zahlen, die für sich sprechen</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat stat--light animate-fade-up">
+        <span class="stat__number" data-target="650000">0</span>
+        <span class="stat__label" data-i18n="home.stats.s1">Teilnehmer weltweit</span>
+      </div>
+      <div class="stat stat--light animate-fade-up animate-delay-1">
+        <span class="stat__number" data-target="145">0</span>
+        <span class="stat__label" data-i18n="home.stats.s2">Universitäten & Hochschulen</span>
+      </div>
+      <div class="stat stat--light animate-fade-up animate-delay-2">
+        <span class="stat__number" data-target="625">0</span>
+        <span class="stat__label" data-i18n="home.stats.s3">Zertifizierte Trainer</span>
+      </div>
+      <div class="stat stat--light animate-fade-up animate-delay-3">
+        <span class="stat__number" data-target="30">0</span>
+        <span class="stat__label" data-i18n="home.stats.s4">Jahre Erfahrung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="home.test.label">Erfahrungsberichte</span>
+      <h2 data-i18n="home.test.h2">Was unsere Teilnehmer sagen</h2>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial animate-fade-up animate-delay-1">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text" data-i18n="home.t1.text">
+          "Das SKY-Programm hat mir geholfen, mit dem Stress der Prüfungsphasen umzugehen. Ich schlafe besser, bin konzentrierter und fühle mich viel ausgeglichener. Absolut empfehlenswert!"
+        </p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">LM</div>
+          <div>
+            <div class="testimonial__name" data-i18n="home.t1.name">Lena Müller</div>
+            <div class="testimonial__role" data-i18n="home.t1.role">Masterstudentin, Informatik · RWTH Aachen</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial animate-fade-up animate-delay-2">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text" data-i18n="home.t2.text">
+          "Als Dozentin war ich skeptisch, aber die Wirkung der Atemübungen auf meine Studierenden war messbar. Mehr Engagement, weniger Burnout-Fälle – das Programm sollte Pflicht an jeder Hochschule sein."
+        </p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">SK</div>
+          <div>
+            <div class="testimonial__name" data-i18n="home.t2.name">Prof. Dr. Sarah Klein</div>
+            <div class="testimonial__role" data-i18n="home.t2.role">Professorin für Psychologie · Universität Köln</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial animate-fade-up animate-delay-3">
+        <div class="testimonial__stars">★★★★★</div>
+        <p class="testimonial__text" data-i18n="home.t3.text">
+          "Ich habe während meines Erasmus-Aufenthalts in Aachen am SKY-Kurs teilgenommen. In einer fremden Stadt gab mir das Programm nicht nur Werkzeuge für den Stress, sondern auch eine echte Gemeinschaft."
+        </p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">CR</div>
+          <div>
+            <div class="testimonial__name" data-i18n="home.t3.name">Carlos Rodrigues</div>
+            <div class="testimonial__role" data-i18n="home.t3.role">Erasmus-Student, Wirtschaft · aus Porto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research Teaser ── -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:64px">
+      <div class="animate-fade-up">
+        <span class="label" data-i18n="home.research.label">Wissenschaftlich belegt</span>
+        <h2 style="margin-top:12px;margin-bottom:20px" data-i18n="home.research.h2">Evidenzbasierte Methoden</h2>
+        <p data-i18n="home.research.p1">
+          Das SKY-Programm ist keine Alternative zur Wissenschaft – es ist von ihr gemacht. Mehr als 100 peer-reviewed Studien an weltweit führenden Universitäten belegen die Wirksamkeit unserer Methoden.
+        </p>
+        <p style="margin-top:16px" data-i18n="home.research.p2">
+          Reduktion von Stress, Angst und Depression; Verbesserung von Fokus, Schlafqualität und sozialem Wohlbefinden – die Forschungsergebnisse sind eindeutig.
+        </p>
+        <a href="research.html" class="btn btn--primary" style="margin-top:32px">
+          <span data-i18n="home.research.btn">Forschung entdecken</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="animate-fade-up animate-delay-2">
+        <div class="grid-2" style="gap:16px">
+          <div class="highlight-stat">
+            <span class="number">73%</span>
+            <span class="desc" data-i18n="home.research.h1">weniger wahrgenommener Stress</span>
+          </div>
+          <div class="highlight-stat">
+            <span class="number">56%</span>
+            <span class="desc" data-i18n="home.research.h2b">Reduktion von Angstsymptomen</span>
+          </div>
+          <div class="highlight-stat">
+            <span class="number">4x</span>
+            <span class="desc" data-i18n="home.research.h3">bessere Schlafqualität</span>
+          </div>
+          <div class="highlight-stat">
+            <span class="number">100+</span>
+            <span class="desc" data-i18n="home.research.h4">Peer-reviewed Studien</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner animate-fade-up">
+      <span class="label" style="color:var(--gold-light)" data-i18n="home.cta.label">Bereit anzufangen?</span>
+      <h2 style="margin-top:12px" data-i18n="home.cta.h2">Starte deine Reise zu mehr Wohlbefinden</h2>
+      <p data-i18n="home.cta.p">Schließe dich tausenden Studierenden und Lehrenden in Deutschland an, die bereits von SKY Campus profitieren. Alle Programme sind kostenlos für Hochschulangehörige.</p>
+      <div class="cta-actions">
+        <a href="programs.html" class="btn btn--gold">
+          <span data-i18n="home.cta.btn1">Jetzt kostenlos anmelden</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn--outline" data-i18n="home.cta.btn2">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">
+          <div class="sky-logo">
+            <div class="sky-logo__sky">sky</div>
+            <div class="sky-logo__campus">CAMPUS</div>
+            <div class="sky-logo__country">GERMANY</div>
+          </div>
+        </div>
+        <p class="footer__tagline" data-i18n="footer.tagline">
+          Wissenschaftlich fundierte Wohlbefinden- und Resilienzprogramme für Hochschulen in Deutschland.
+        </p>
+        <address class="footer__address">
+          Charlottenstraße 14<br />52070 Aachen<br />Deutschland
+        </address>
+        <p class="footer__reg" data-i18n="footer.reg">Eingetragener Verein · SKY Campus Deutschland e.V.</p>
+      </div>
+
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.prog">Programme</h4>
+        <ul class="footer__links">
+          <li><a href="programs.html" data-i18n="footer.prog1">SKY Happiness Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog2">Lehrenden-Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog3">Advanced Meditation</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog4">Leadership-Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog5">Online-Kurse</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.org">Organisation</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" data-i18n="footer.org1">Über uns</a></li>
+          <li><a href="about.html#team" data-i18n="footer.org2">Unser Team</a></li>
+          <li><a href="research.html" data-i18n="footer.org3">Forschung</a></li>
+          <li><a href="contact.html" data-i18n="footer.org4">Kontakt</a></li>
+          <li><a href="about.html#partner" data-i18n="footer.org5">Partnerhochschulen</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.legal">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="impressum.html" data-i18n="footer.legal1">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="footer.legal2">Datenschutz</a></li>
+          <li><a href="agb.html" data-i18n="footer.legal3">AGB</a></li>
+          <li><a href="contact.html">Satzung</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 SKY Campus Deutschland e.V. Alle Rechte vorbehalten.</span>
+      <div class="footer__legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

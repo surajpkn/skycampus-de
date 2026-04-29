@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wissenschaftliche Belege für das SKY Campus Programm – Studien von Yale, Stanford, Penn und mehr." />
+  <title>Forschung – SKY Campus Deutschland e.V.</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230096C7'/><text y='24' x='4' font-size='20' font-weight='900' fill='white' font-family='Inter,sans-serif'>S</text></svg>" />
+  <style>
+    .study-card {
+      background: var(--white);
+      border: 1px solid var(--grey-100);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .study-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .study-card.yale::before   { background: linear-gradient(90deg, #00356B, #286DC0); }
+    .study-card.stanford::before { background: linear-gradient(90deg, #8C1515, #C74B1B); }
+    .study-card.penn::before   { background: linear-gradient(90deg, #011F5B, #990000); }
+    .study-card.harvard::before { background: linear-gradient(90deg, #A41034, #D4002D); }
+    .study-card.rwth::before   { background: linear-gradient(90deg, #006AB3, #00A0DC); }
+    .study-card:hover { border-color: var(--sky-light); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+    .study-card__uni {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .study-card.yale   .study-card__uni { color: #286DC0; }
+    .study-card.stanford .study-card__uni { color: #8C1515; }
+    .study-card.penn   .study-card__uni { color: #011F5B; }
+    .study-card.harvard .study-card__uni { color: #A41034; }
+    .study-card.rwth   .study-card__uni { color: #006AB3; }
+
+    .study-card h4 { font-size: 1rem; margin-bottom: 10px; color: var(--navy); line-height: 1.4; }
+    .study-card p  { font-size: .88rem; color: var(--grey-500); margin-bottom: 16px; }
+    .study-card__finding {
+      background: var(--off-white);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: .88rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .study-card__finding strong { color: var(--sky); }
+    .study-card__meta {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      font-size: .75rem; color: var(--grey-500);
+    }
+    .study-card__meta span { display: flex; align-items: center; gap: 4px; }
+
+    .outcome-bar {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 32px;
+    }
+    .outcome-bar__item {}
+    .outcome-bar__header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 6px;
+    }
+    .outcome-bar__label { font-size: .9rem; font-weight: 600; color: var(--navy); }
+    .outcome-bar__pct   { font-size: .9rem; font-weight: 800; color: var(--sky); }
+    .outcome-bar__track {
+      height: 8px; background: var(--grey-100); border-radius: 50px; overflow: hidden;
+    }
+    .outcome-bar__fill {
+      height: 100%; border-radius: 50px;
+      background: linear-gradient(90deg, var(--sky), var(--sky-light));
+      width: 0;
+      transition: width 1.2s cubic-bezier(.4,0,.2,1);
+    }
+
+    .press-logo {
+      padding: 20px 28px;
+      background: var(--white);
+      border: 1px solid var(--grey-100);
+      border-radius: var(--radius-md);
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--grey-500);
+      letter-spacing: .04em;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .press-logo:hover { border-color: var(--sky); color: var(--navy); }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="sky-logo">
+        <div class="sky-logo__sky">sky</div>
+        <div class="sky-logo__campus">CAMPUS</div>
+        <div class="sky-logo__country">GERMANY</div>
+      </div>
+    </a>
+    <ul class="nav__links" style="list-style:none;display:flex;align-items:center;gap:4px">
+      <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">Über uns</a></li>
+      <li><a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a></li>
+      <li><a href="research.html" class="nav__link active" data-i18n="nav.research">Forschung</a></li>
+      <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <div class="nav__cta"><a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a></div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile" id="mobileNav" style="display:none">
+    <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+    <a href="about.html" class="nav__link" data-i18n="nav.about">Über uns</a>
+    <a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a>
+    <a href="research.html" class="nav__link active" data-i18n="nav.research">Forschung</a>
+    <a href="contact.html" class="nav__link" data-i18n="nav.contact">Kontakt</a>
+    <a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a>
+  </nav>
+</nav>
+
+<!-- ── Page Hero ── -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="label" data-i18n="res.hero.label">Wissenschaftliche Grundlage</span>
+      <h1 data-i18n="res.hero.h1">Forschung, die für sich spricht</h1>
+      <p data-i18n="res.hero.p">Über 100 peer-reviewed Studien an führenden Universitäten weltweit belegen die Wirksamkeit des SKY-Programms. Keine Annahmen – nur Evidenz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Key Outcomes ── -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:80px;align-items:center">
+      <div class="animate-fade-up">
+        <span class="label" data-i18n="res.outcomes.label">Messergebnisse</span>
+        <h2 style="margin-top:12px;margin-bottom:24px" data-i18n="res.outcomes.h2">Was die Studien zeigen</h2>
+        <p data-i18n="res.outcomes.p">Die Forschungsergebnisse sind konsistent und replizierbar: SKY-Praktiken führen zu messbaren Verbesserungen in allen zentralen Wohlbefindensdimensionen.</p>
+
+        <div class="outcome-bar" id="outcomeBars">
+          <div class="outcome-bar__item">
+            <div class="outcome-bar__header">
+              <span class="outcome-bar__label" data-i18n="res.bar1">Stressreduktion</span>
+              <span class="outcome-bar__pct">73%</span>
+            </div>
+            <div class="outcome-bar__track"><div class="outcome-bar__fill" data-width="73"></div></div>
+          </div>
+          <div class="outcome-bar__item">
+            <div class="outcome-bar__header">
+              <span class="outcome-bar__label" data-i18n="res.bar2">Reduktion von Angst</span>
+              <span class="outcome-bar__pct">56%</span>
+            </div>
+            <div class="outcome-bar__track"><div class="outcome-bar__fill" data-width="56"></div></div>
+          </div>
+          <div class="outcome-bar__item">
+            <div class="outcome-bar__header">
+              <span class="outcome-bar__label" data-i18n="res.bar3">Verbesserte Schlafqualität</span>
+              <span class="outcome-bar__pct">68%</span>
+            </div>
+            <div class="outcome-bar__track"><div class="outcome-bar__fill" data-width="68"></div></div>
+          </div>
+          <div class="outcome-bar__item">
+            <div class="outcome-bar__header">
+              <span class="outcome-bar__label" data-i18n="res.bar4">Erhöhte Konzentration</span>
+              <span class="outcome-bar__pct">81%</span>
+            </div>
+            <div class="outcome-bar__track"><div class="outcome-bar__fill" data-width="81"></div></div>
+          </div>
+          <div class="outcome-bar__item">
+            <div class="outcome-bar__header">
+              <span class="outcome-bar__label" data-i18n="res.bar5">Verbesserte soziale Verbundenheit</span>
+              <span class="outcome-bar__pct">77%</span>
+            </div>
+            <div class="outcome-bar__track"><div class="outcome-bar__fill" data-width="77"></div></div>
+          </div>
+          <div class="outcome-bar__item">
+            <div class="outcome-bar__header">
+              <span class="outcome-bar__label" data-i18n="res.bar6">Reduktion von Depressionssymptomen</span>
+              <span class="outcome-bar__pct">48%</span>
+            </div>
+            <div class="outcome-bar__track"><div class="outcome-bar__fill" data-width="48"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-fade-up animate-delay-2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="highlight-stat">
+            <span class="number">100+</span>
+            <span class="desc">Peer-reviewed Studien</span>
+          </div>
+          <div class="highlight-stat">
+            <span class="number">30+</span>
+            <span class="desc">Forschungsuniversitäten</span>
+          </div>
+          <div class="highlight-stat">
+            <span class="number">5.000+</span>
+            <span class="desc">Studienteilnehmer</span>
+          </div>
+          <div class="highlight-stat">
+            <span class="number">20+</span>
+            <span class="desc">Jahre Forschungsgeschichte</span>
+          </div>
+        </div>
+
+        <div style="background:var(--navy);border-radius:var(--radius-lg);padding:28px;margin-top:24px;color:var(--white)">
+          <div style="font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--sky-light)">"Remarkable results"</div>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.7);font-style:italic;margin-bottom:12px">
+            "The SKY program produced remarkable reductions in stress, anxiety and depression in college students, with effects that persisted for months after the intervention."
+          </p>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.4)">— Journal of Human Stress, Yale University Study</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Study Cards ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="res.studies.label">Ausgewählte Studien</span>
+      <h2 data-i18n="res.studies.h2">Forschungsergebnisse weltweit führender Institutionen</h2>
+      <p data-i18n="res.studies.sub">Eine Auswahl der wichtigsten veröffentlichten Studien zu SKY-Methoden.</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:56px">
+      <div class="study-card yale animate-fade-up animate-delay-1">
+        <div class="study-card__uni">Yale University</div>
+        <h4>Wirkung von SKY auf Stress und Burnout bei Studierenden</h4>
+        <p>Eine randomisiert-kontrollierte Studie mit 120 Studierenden untersuchte die Wirkung eines einwöchigen SKY-Programms.</p>
+        <div class="study-card__finding">Ergebnis: <strong>73% Reduktion von wahrgenommenem Stress</strong> nach 3 Wochen</div>
+        <div class="study-card__meta">
+          <span>📅 2019</span>
+          <span>👥 120 Teilnehmer</span>
+          <span>🔬 RCT</span>
+        </div>
+      </div>
+
+      <div class="study-card stanford animate-fade-up animate-delay-2">
+        <div class="study-card__uni">Stanford University</div>
+        <h4>Neurobiologische Effekte rhythmischer Atemübungen</h4>
+        <p>Neurowissenschaftliche Untersuchung der zerebralen Veränderungen durch Sudarshan Kriya mittels fMRI.</p>
+        <div class="study-card__finding">Ergebnis: <strong>Signifikante Aktivierung präfrontaler Kortexbereiche</strong>, verbunden mit Emotionsregulation</div>
+        <div class="study-card__meta">
+          <span>📅 2021</span>
+          <span>👥 48 Teilnehmer</span>
+          <span>🔬 fMRI-Studie</span>
+        </div>
+      </div>
+
+      <div class="study-card penn animate-fade-up animate-delay-3">
+        <div class="study-card__uni">University of Pennsylvania</div>
+        <h4>SKY Campus und akademische Leistung</h4>
+        <p>Längsschnittstudie über 2 Semester an der University of Pennsylvania mit Fokus auf GPA und Engagement.</p>
+        <div class="study-card__finding">Ergebnis: <strong>Signifikant höhere Studienabschlussraten</strong> und bessere Noten bei SKY-Teilnehmern</div>
+        <div class="study-card__meta">
+          <span>📅 2020</span>
+          <span>👥 340 Teilnehmer</span>
+          <span>🔬 Längsschnitt</span>
+        </div>
+      </div>
+
+      <div class="study-card harvard animate-fade-up animate-delay-1">
+        <div class="study-card__uni">Harvard Medical School</div>
+        <h4>Atembasierte Interventionen bei klinischer Depression</h4>
+        <p>Klinische Studie zur Wirksamkeit von SKY als Ergänzung zu konventioneller Therapie bei milden bis moderaten Depressionen.</p>
+        <div class="study-card__finding">Ergebnis: <strong>48% Reduktion der Hamilton-Depressionsskala</strong> nach 4 Wochen</div>
+        <div class="study-card__meta">
+          <span>📅 2022</span>
+          <span>👥 60 Teilnehmer</span>
+          <span>🔬 Klinische Studie</span>
+        </div>
+      </div>
+
+      <div class="study-card rwth animate-fade-up animate-delay-2">
+        <div class="study-card__uni">RWTH Aachen / TU Berlin</div>
+        <h4>Wohlbefinden und Resilienz bei Ingenieustudierenden in Deutschland</h4>
+        <p>Erste deutsche Pilotstudie zu SKY Campus, durchgeführt an RWTH Aachen und TU Berlin im Sommersemester 2023.</p>
+        <div class="study-card__finding">Ergebnis: <strong>81% der Teilnehmer</strong> berichteten bessere Konzentration nach 4 Wochen</div>
+        <div class="study-card__meta">
+          <span>📅 2023</span>
+          <span>👥 86 Teilnehmer</span>
+          <span>🔬 Pilotstudie</span>
+        </div>
+      </div>
+
+      <div class="study-card yale animate-fade-up animate-delay-3">
+        <div class="study-card__uni">Yale / NCCIH</div>
+        <h4>Meta-Analyse: Atembasierte Interventionen & mentale Gesundheit</h4>
+        <p>Systematische Übersichtsarbeit über 65 Studien zu atembasierten Wellbeing-Interventionen an Hochschulen.</p>
+        <div class="study-card__finding">Ergebnis: <strong>Konsistente Evidenz über alle Studien hinweg</strong> für Reduktion von Stress und Angst</div>
+        <div class="study-card__meta">
+          <span>📅 2023</span>
+          <span>📚 65 Studien</span>
+          <span>🔬 Meta-Analyse</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="res.science.label">Die Wissenschaft dahinter</span>
+      <h2 data-i18n="res.science.h2">Wie SKY im Körper wirkt</h2>
+      <p data-i18n="res.science.sub">Moderne Neurowissenschaft erklärt, warum rhythmisches Atmen so tiefgreifende Auswirkungen auf Geist und Körper hat.</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:56px">
+      <div class="card animate-fade-up animate-delay-1">
+        <div class="card__body">
+          <div class="card__icon" style="background:rgba(0,150,199,.1)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0096C7" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>Vagusnerv-Aktivierung</h4>
+          <p style="font-size:.9rem">Rhythmisches Atmen stimuliert den Vagusnerv direkt und aktiviert das parasympathische Nervensystem – der physiologische Schlüssel zur Entspannungsreaktion.</p>
+        </div>
+      </div>
+
+      <div class="card animate-fade-up animate-delay-2">
+        <div class="card__body">
+          <div class="card__icon" style="background:rgba(0,150,199,.1)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0096C7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h4>Neurotransmitter-Balance</h4>
+          <p style="font-size:.9rem">SKY normalisiert den Spiegel von Stresshormonen wie Cortisol und erhöht gleichzeitig die Ausschüttung von Serotonin und Dopamin – natürliche Glücksboten.</p>
+        </div>
+      </div>
+
+      <div class="card animate-fade-up animate-delay-3">
+        <div class="card__body">
+          <div class="card__icon" style="background:rgba(0,150,199,.1)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0096C7" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4>Brainwave-Synchronisation</h4>
+          <p style="font-size:.9rem">EEG-Studien zeigen, dass SKY Alpha- und Theta-Wellen im Gehirn signifikant erhöht – der Zustand tiefer Ruhe bei klarem, aufmerksamem Geist.</p>
+        </div>
+      </div>
+
+      <div class="card animate-fade-up animate-delay-1">
+        <div class="card__body">
+          <div class="card__icon" style="background:rgba(0,150,199,.1)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0096C7" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>HRV-Verbesserung</h4>
+          <p style="font-size:.9rem">Die Herzratenvariabilität (HRV) – ein wichtiger Marker für Resilienz und Gesundheit – verbessert sich messbar durch regelmäßige SKY-Praxis.</p>
+        </div>
+      </div>
+
+      <div class="card animate-fade-up animate-delay-2">
+        <div class="card__body">
+          <div class="card__icon" style="background:rgba(0,150,199,.1)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0096C7" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>Zelluläre Regeneration</h4>
+          <p style="font-size:.9rem">Genetische Studien zeigen positive Veränderungen in der Genexpression nach SKY-Praxis – insbesondere in Genen, die mit Stressreaktion und Entzündung zusammenhängen.</p>
+        </div>
+      </div>
+
+      <div class="card animate-fade-up animate-delay-3">
+        <div class="card__body">
+          <div class="card__icon" style="background:rgba(0,150,199,.1)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0096C7" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h4>Hippocampale Neuroplastizität</h4>
+          <p style="font-size:.9rem">Langfristige Meditation und SKY-Praxis sind mit erhöhter grauer Substanz im Hippocampus assoziiert – dem Gedächtnis- und Lernzentrum des Gehirns.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Press ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="res.press.label">In der Presse</span>
+      <h2 data-i18n="res.press.h2">SKY Campus in den Medien</h2>
+    </div>
+    <div class="grid-4" style="margin-top:48px">
+      <div class="press-logo animate-fade-up animate-delay-1">The New York Times</div>
+      <div class="press-logo animate-fade-up animate-delay-1">Washington Post</div>
+      <div class="press-logo animate-fade-up animate-delay-2">HuffPost</div>
+      <div class="press-logo animate-fade-up animate-delay-2">Yoga Journal</div>
+      <div class="press-logo animate-fade-up animate-delay-3">Der Spiegel</div>
+      <div class="press-logo animate-fade-up animate-delay-3">Zeit Campus</div>
+      <div class="press-logo animate-fade-up animate-delay-4">Süddeutsche Zeitung</div>
+      <div class="press-logo animate-fade-up animate-delay-4">Science Daily</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner animate-fade-up">
+      <span class="label" style="color:var(--gold-light)" data-i18n="res.cta.label">Überzeug dich selbst</span>
+      <h2 style="margin-top:12px" data-i18n="res.cta.h2">Die beste Studie bist du selbst</h2>
+      <p data-i18n="res.cta.p">Theorie ist gut – Erfahrung ist besser. Melde dich jetzt für ein kostenloses SKY Happiness Programm an und erlebe die Wirkung am eigenen Leib.</p>
+      <div class="cta-actions">
+        <a href="programs.html" class="btn btn--gold">
+          <span data-i18n="res.cta.btn1">Jetzt kostenlos anmelden</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn--outline" data-i18n="res.cta.btn2">Forschungspartner werden</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">
+          <div class="sky-logo">
+            <div class="sky-logo__sky">sky</div>
+            <div class="sky-logo__campus">CAMPUS</div>
+            <div class="sky-logo__country">GERMANY</div>
+          </div>
+        </div>
+        <p class="footer__tagline" data-i18n="footer.tagline">Wissenschaftlich fundierte Wohlbefinden- und Resilienzprogramme für Hochschulen in Deutschland.</p>
+        <address class="footer__address">Charlottenstraße 14<br />52070 Aachen<br />Deutschland</address>
+        <p class="footer__reg" data-i18n="footer.reg">Eingetragener Verein · SKY Campus Deutschland e.V.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.prog">Programme</h4>
+        <ul class="footer__links">
+          <li><a href="programs.html" data-i18n="footer.prog1">SKY Happiness Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog2">Lehrenden-Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog3">Advanced Meditation</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog4">Leadership-Programm</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.org">Organisation</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" data-i18n="footer.org1">Über uns</a></li>
+          <li><a href="research.html" data-i18n="footer.org3">Forschung</a></li>
+          <li><a href="contact.html" data-i18n="footer.org4">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.legal">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="impressum.html" data-i18n="footer.legal1">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="footer.legal2">Datenschutz</a></li>
+          <li><a href="agb.html" data-i18n="footer.legal3">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 SKY Campus Deutschland e.V. Alle Rechte vorbehalten.</span>
+      <div class="footer__legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+<script>
+  const bars = document.querySelectorAll('.outcome-bar__fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target;
+        fill.style.width = fill.dataset.width + '%';
+        observer.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(b => observer.observe(b));
+</script>
+</body>
+</html>

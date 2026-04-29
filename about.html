@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Über SKY Campus Deutschland e.V. – unsere Geschichte, Mission, Vision, Team und Partnerhochschulen." />
+  <title>Über uns – SKY Campus Deutschland e.V.</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230096C7'/><text y='24' x='4' font-size='20' font-weight='900' fill='white' font-family='Inter,sans-serif'>S</text></svg>" />
+  <style>
+    .value-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--grey-100);
+      transition: var(--transition);
+    }
+    .value-card:hover { border-color: var(--sky-light); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .value-card .icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .value-card h3 { margin-bottom: 10px; color: var(--navy); }
+    .value-card p  { font-size: .92rem; }
+
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--grey-100);
+      transition: var(--transition);
+      text-align: center;
+    }
+    .team-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .team-card__avatar {
+      height: 180px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, var(--grey-100), var(--grey-200));
+    }
+    .team-card__body { padding: 24px; }
+    .team-card__name { font-weight: 700; font-size: 1.05rem; color: var(--navy); margin-bottom: 4px; }
+    .team-card__role { font-size: .82rem; color: var(--sky); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 12px; }
+    .team-card__bio { font-size: .88rem; color: var(--grey-500); line-height: 1.6; }
+
+    .partner-logo {
+      background: var(--white);
+      border: 1px solid var(--grey-100);
+      border-radius: var(--radius-md);
+      padding: 20px 28px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--grey-500);
+      font-size: .9rem;
+      letter-spacing: .04em;
+      transition: var(--transition);
+    }
+    .partner-logo:hover { border-color: var(--sky); color: var(--navy); box-shadow: var(--shadow-sm); }
+
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--sky), var(--navy-mid));
+      border-radius: 2px;
+    }
+    .timeline-item { position: relative; margin-bottom: 40px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -28px; top: 6px;
+      width: 12px; height: 12px;
+      background: var(--sky);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--sky);
+    }
+    .timeline-year { font-size: .8rem; font-weight: 700; color: var(--sky); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+    .timeline-item h4 { margin-bottom: 6px; font-size: 1.05rem; }
+    .timeline-item p  { font-size: .9rem; color: var(--grey-500); }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="sky-logo">
+        <div class="sky-logo__sky">sky</div>
+        <div class="sky-logo__campus">CAMPUS</div>
+        <div class="sky-logo__country">GERMANY</div>
+      </div>
+    </a>
+    <ul class="nav__links" style="list-style:none;display:flex;align-items:center;gap:4px">
+      <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="nav__link active" data-i18n="nav.about">Über uns</a></li>
+      <li><a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a></li>
+      <li><a href="research.html" class="nav__link" data-i18n="nav.research">Forschung</a></li>
+      <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
+    </ul>
+    <div class="nav__cta"><a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a></div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="nav__mobile" id="mobileNav" style="display:none">
+    <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+    <a href="about.html" class="nav__link active" data-i18n="nav.about">Über uns</a>
+    <a href="programs.html" class="nav__link" data-i18n="nav.programs">Programme</a>
+    <a href="research.html" class="nav__link" data-i18n="nav.research">Forschung</a>
+    <a href="contact.html" class="nav__link" data-i18n="nav.contact">Kontakt</a>
+    <a href="programs.html" class="btn btn--primary" data-i18n="nav.cta">Jetzt anmelden</a>
+  </nav>
+</nav>
+
+<!-- ── Page Hero ── -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="label" data-i18n="about.hero.label">Über SKY Campus Deutschland</span>
+      <h1 data-i18n="about.hero.h1">Wir bringen Wohlbefinden an deutsche Hochschulen</h1>
+      <p data-i18n="about.hero.p">SKY Campus Deutschland e.V. ist ein gemeinnütziger Verein mit Sitz in Aachen. Unsere Mission: Studierenden, Lehrenden und Hochschulmitarbeitenden in ganz Deutschland wirksame, wissenschaftlich fundierte Werkzeuge für ein erfülltes, resilientes Leben zu geben.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Mission & Vision ── -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2">
+      <div class="animate-fade-up">
+        <span class="label" data-i18n="about.mission.label">Unsere Mission</span>
+        <h2 style="margin-top:12px;margin-bottom:20px" data-i18n="about.mission.h2">Wohlbefinden als Grundlage für Exzellenz</h2>
+        <p data-i18n="about.mission.p1">Wir glauben, dass wahre akademische Exzellenz nur auf einem stabilen Fundament aus innerem Wohlbefinden entstehen kann. Stress, Burnout und psychische Belastungen sind an deutschen Hochschulen weit verbreitet – SKY Campus bietet wirksame Gegenmittel.</p>
+        <p style="margin-top:16px" data-i18n="about.mission.p2">Durch Atemübungen, Meditation und Community-Building schaffen wir Räume, in denen Menschen ihre vollständige Kapazität entfalten können – akademisch, sozial und persönlich.</p>
+        <div style="margin-top:32px;padding:24px;background:var(--off-white);border-radius:var(--radius-lg);border-left:4px solid var(--sky)">
+          <p style="font-style:italic;font-size:.95rem;" data-i18n="about.mission.quote">"Unser Ziel ist eine Hochschullandschaft, in der Wohlbefinden und Leistung keine Gegensätze sind, sondern sich gegenseitig bedingen."</p>
+          <p style="margin-top:8px;font-size:.82rem;color:var(--grey-500)" data-i18n="about.mission.cite">— SKY Campus Deutschland, Gründungsmission</p>
+        </div>
+      </div>
+
+      <div class="animate-fade-up animate-delay-2">
+        <span class="label" data-i18n="about.vision.label">Unsere Vision</span>
+        <h2 style="margin-top:12px;margin-bottom:20px" data-i18n="about.vision.h2">Ein Deutschland, in dem jede Hochschule thriving ist</h2>
+        <p data-i18n="about.vision.p1">Wir arbeiten auf eine Zukunft hin, in der SKY Campus an jeder deutschen Universität und Fachhochschule präsent ist – mit zertifizierten Trainern, regelmäßigen Kursen und einer lebendigen, unterstützenden Gemeinschaft.</p>
+        <p style="margin-top:16px" data-i18n="about.vision.p2">Wir sind Teil eines weltweiten Netzwerks von SKY Campus Chapters, das bereits über 145 Universitäten in mehr als 20 Ländern umfasst.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px">
+          <div class="highlight-stat"><span class="number" style="font-size:2rem">2025</span><span class="desc">Gründungsjahr in Deutschland</span></div>
+          <div class="highlight-stat"><span class="number" style="font-size:2rem">10+</span><span class="desc">Zieluniversitäten bis 2027</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Values ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="about.values.label">Unsere Werte</span>
+      <h2 data-i18n="about.values.h2">Was uns antreibt</h2>
+      <p data-i18n="about.values.sub">Sechs Kernwerte bilden das Fundament unserer Arbeit und leiten all unsere Entscheidungen.</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:56px">
+      <div class="value-card animate-fade-up animate-delay-1">
+        <div class="icon">🌍</div>
+        <h3 data-i18n="about.v1.h3">Inklusivität</h3>
+        <p data-i18n="about.v1.p">Unsere Programme stehen allen offen, unabhängig von Herkunft, Glauben oder Hintergrund. Wohlbefinden kennt keine Grenzen.</p>
+      </div>
+      <div class="value-card animate-fade-up animate-delay-2">
+        <div class="icon">🔬</div>
+        <h3 data-i18n="about.v2.h3">Wissenschaftlichkeit</h3>
+        <p data-i18n="about.v2.p">Alle unsere Methoden sind evidenzbasiert. Wir arbeiten aktiv mit Forschungsinstitutionen zusammen, um unsere Wirksamkeit kontinuierlich zu belegen.</p>
+      </div>
+      <div class="value-card animate-fade-up animate-delay-3">
+        <div class="icon">🤲</div>
+        <h3 data-i18n="about.v3.h3">Dienst am Menschen</h3>
+        <p data-i18n="about.v3.p">Als gemeinnütziger Verein reinvestieren wir alles in unsere Mission. Alle Programme für Studierende sind und bleiben kostenlos.</p>
+      </div>
+      <div class="value-card animate-fade-up animate-delay-1">
+        <div class="icon">💡</div>
+        <h3 data-i18n="about.v4.h3">Authentizität</h3>
+        <p data-i18n="about.v4.p">Wir vermitteln nur das, wovon wir selbst täglich profitieren. Unsere Trainer praktizieren aktiv, was sie lehren.</p>
+      </div>
+      <div class="value-card animate-fade-up animate-delay-2">
+        <div class="icon">🌱</div>
+        <h3 data-i18n="about.v5.h3">Nachhaltigkeit</h3>
+        <p data-i18n="about.v5.p">Wir schaffen keine kurzfristigen Lösungen, sondern lebenslange Werkzeuge und Gemeinschaften, die Menschen langfristig begleiten.</p>
+      </div>
+      <div class="value-card animate-fade-up animate-delay-3">
+        <div class="icon">🏛️</div>
+        <h3 data-i18n="about.v6.h3">Partnerschaft</h3>
+        <p data-i18n="about.v6.p">Wir arbeiten als gleichberechtigte Partner mit Hochschulen, nicht als externe Dienstleister. Gemeinsam gestalten wir nachhaltige Strukturen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Team ── -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="about.team.label">Das Team</span>
+      <h2 data-i18n="about.team.h2">Menschen, die den Unterschied machen</h2>
+      <p data-i18n="about.team.sub">Unser Team aus zertifizierten Trainern, Forschern und Hochschulexperten arbeitet leidenschaftlich daran, das SKY-Programm in Deutschland zu verbreiten.</p>
+    </div>
+
+    <div class="grid-4" style="margin-top:56px">
+      <div class="team-card animate-fade-up animate-delay-1">
+        <div class="team-card__avatar">🧘</div>
+        <div class="team-card__body">
+          <div class="team-card__name" data-i18n="about.tm1.name">Dr. Anjali Sharma</div>
+          <div class="team-card__role" data-i18n="about.tm1.role">Gründerin & Vorstand</div>
+          <p class="team-card__bio" data-i18n="about.tm1.bio">Zertifizierte SKY-Trainerin seit 2008, Promotion in Psychologie. 15+ Jahre Erfahrung in Hochschul-Wellbeing.</p>
+        </div>
+      </div>
+      <div class="team-card animate-fade-up animate-delay-2">
+        <div class="team-card__avatar">🌟</div>
+        <div class="team-card__body">
+          <div class="team-card__name" data-i18n="about.tm2.name">Markus Hoffmann</div>
+          <div class="team-card__role" data-i18n="about.tm2.role">Leitender Trainer</div>
+          <p class="team-card__bio" data-i18n="about.tm2.bio">Dipl.-Pädagoge und SKY-Trainer. Hat über 2.000 Menschen in Deutschland in das SKY-Programm eingeführt.</p>
+        </div>
+      </div>
+      <div class="team-card animate-fade-up animate-delay-3">
+        <div class="team-card__avatar">📊</div>
+        <div class="team-card__body">
+          <div class="team-card__name" data-i18n="about.tm3.name">Dr. Priya Nair</div>
+          <div class="team-card__role" data-i18n="about.tm3.role">Forschungsleitung</div>
+          <p class="team-card__bio" data-i18n="about.tm3.bio">Neurowissenschaftlerin, koordiniert Wirkungsforschung zu SKY-Methoden an deutschen Universitäten.</p>
+        </div>
+      </div>
+      <div class="team-card animate-fade-up animate-delay-4">
+        <div class="team-card__avatar">🤝</div>
+        <div class="team-card__body">
+          <div class="team-card__name" data-i18n="about.tm4.name">Jonas Weber</div>
+          <div class="team-card__role" data-i18n="about.tm4.role">Hochschulpartnerschaften</div>
+          <p class="team-card__bio" data-i18n="about.tm4.bio">Ehemaliger Studentenvertreter, koordiniert die Zusammenarbeit mit Universitäten und Studierendenwerken bundesweit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── History Timeline ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="grid-2" style="gap:64px;align-items:start">
+      <div class="animate-fade-up">
+        <span class="label" data-i18n="about.history.label">Unsere Geschichte</span>
+        <h2 style="margin-top:12px;margin-bottom:40px" data-i18n="about.history.h2">Von Aachen in die Welt</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1990er</div>
+            <h4>Gründung des globalen SKY Campus Netzwerks</h4>
+            <p>Sri Sri Ravi Shankar und die Art of Living Foundation entwickeln das SKY-Programm speziell für Hochschulen.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2005</div>
+            <h4>Erste europäische Chapters</h4>
+            <p>SKY Campus etabliert sich an ersten europäischen Universitäten – London, Amsterdam, Zürich.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <h4>SKY kommt nach Aachen</h4>
+            <p>Erste regelmäßige SKY-Kurse für Studierende an der RWTH Aachen – der Grundstein für den deutschen Chapter.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <h4>Ausbau auf weitere deutsche Hochschulen</h4>
+            <p>Programme an TU Berlin, Uni Köln und LMU München. Über 500 Teilnehmer in Deutschland.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <h4>Gründung SKY Campus Deutschland e.V.</h4>
+            <p>Offizielle Vereinsgründung mit Sitz in Aachen. Launch von skycampus.de als erste offizielle Plattform.</p>
+          </div>
+        </div>
+      </div>
+      <div class="animate-fade-up animate-delay-2">
+        <span class="label" data-i18n="about.network.label">Globales Netzwerk</span>
+        <h2 style="margin-top:12px;margin-bottom:20px" data-i18n="about.network.h2">Teil einer weltweiten Bewegung</h2>
+        <p data-i18n="about.network.p">SKY Campus Deutschland ist Teil des globalen SKY Campus Netzwerks, das von der Art of Living Foundation koordiniert wird. Wir teilen Ressourcen, Forschungsergebnisse und Trainingskonzepte mit Chapters auf 6 Kontinenten.</p>
+        <div style="display:flex;gap:24px;margin-top:32px;flex-wrap:wrap">
+          <div class="highlight-stat" style="flex:1;min-width:120px"><span class="number" style="font-size:1.8rem">20+</span><span class="desc">Länder</span></div>
+          <div class="highlight-stat" style="flex:1;min-width:120px"><span class="number" style="font-size:1.8rem">145+</span><span class="desc">Hochschulen</span></div>
+          <div class="highlight-stat" style="flex:1;min-width:120px"><span class="number" style="font-size:1.8rem">6</span><span class="desc">Kontinente</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Partners ── -->
+<section class="section" id="partner">
+  <div class="container">
+    <div class="section-header center animate-fade-up">
+      <span class="label" data-i18n="about.partner.label">Partnerhochschulen</span>
+      <h2 data-i18n="about.partner.h2">Unsere Hochschulpartner in Deutschland</h2>
+      <p data-i18n="about.partner.sub">Wir arbeiten mit führenden deutschen Hochschulen zusammen, um SKY Campus tief in die Hochschulkultur zu integrieren.</p>
+    </div>
+
+    <div class="grid-4" style="margin-top:56px">
+      <div class="partner-logo animate-fade-up animate-delay-1">RWTH Aachen</div>
+      <div class="partner-logo animate-fade-up animate-delay-1">TU Berlin</div>
+      <div class="partner-logo animate-fade-up animate-delay-2">LMU München</div>
+      <div class="partner-logo animate-fade-up animate-delay-2">Uni Köln</div>
+      <div class="partner-logo animate-fade-up animate-delay-3">Uni Heidelberg</div>
+      <div class="partner-logo animate-fade-up animate-delay-3">TU München</div>
+      <div class="partner-logo animate-fade-up animate-delay-4">Uni Hamburg</div>
+      <div class="partner-logo animate-fade-up animate-delay-4">FU Berlin</div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px" class="animate-fade-up">
+      <p style="color:var(--grey-500);margin-bottom:20px" data-i18n="about.partner.cta.p">Möchtest du SKY Campus an deiner Hochschule einführen?</p>
+      <a href="contact.html" class="btn btn--primary" data-i18n="about.partner.cta.btn">Jetzt Partner werden</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner animate-fade-up">
+      <span class="label" style="color:var(--gold-light)" data-i18n="about.cta.label">Mach mit</span>
+      <h2 style="margin-top:12px" data-i18n="about.cta.h2">Werde Teil der SKY Campus Familie</h2>
+      <p data-i18n="about.cta.p">Ob als Teilnehmer, Trainer, Partner oder Fördermitglied – es gibt viele Wege, unsere Mission zu unterstützen.</p>
+      <div class="cta-actions">
+        <a href="programs.html" class="btn btn--gold" data-i18n="about.cta.btn1">Programme entdecken</a>
+        <a href="contact.html" class="btn btn--outline" data-i18n="about.cta.btn2">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">
+          <div class="sky-logo">
+            <div class="sky-logo__sky">sky</div>
+            <div class="sky-logo__campus">CAMPUS</div>
+            <div class="sky-logo__country">GERMANY</div>
+          </div>
+        </div>
+        <p class="footer__tagline" data-i18n="footer.tagline">Wissenschaftlich fundierte Wohlbefinden- und Resilienzprogramme für Hochschulen in Deutschland.</p>
+        <address class="footer__address">Charlottenstraße 14<br />52070 Aachen<br />Deutschland</address>
+        <p class="footer__reg" data-i18n="footer.reg">Eingetragener Verein · SKY Campus Deutschland e.V.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.prog">Programme</h4>
+        <ul class="footer__links">
+          <li><a href="programs.html" data-i18n="footer.prog1">SKY Happiness Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog2">Lehrenden-Programm</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog3">Advanced Meditation</a></li>
+          <li><a href="programs.html" data-i18n="footer.prog4">Leadership-Programm</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.org">Organisation</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" data-i18n="footer.org1">Über uns</a></li>
+          <li><a href="about.html#team" data-i18n="footer.org2">Unser Team</a></li>
+          <li><a href="research.html" data-i18n="footer.org3">Forschung</a></li>
+          <li><a href="contact.html" data-i18n="footer.org4">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading" data-i18n="footer.h.legal">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="impressum.html" data-i18n="footer.legal1">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="footer.legal2">Datenschutz</a></li>
+          <li><a href="agb.html" data-i18n="footer.legal3">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy" data-i18n="footer.copy">© 2025 SKY Campus Deutschland e.V. Alle Rechte vorbehalten.</span>
+      <div class="footer__legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>
