@@ -363,10 +363,33 @@
   function submitForm(e) {
     e.preventDefault();
     const form = document.getElementById('contactForm');
-    const success = document.getElementById('successMsg');
-    form.style.display = 'none';
-    document.getElementById('intentStep').style.display = 'none';
-    success.classList.add('visible');
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.style.opacity = '.6';
+
+    const data = new FormData(form);
+
+    fetch('https://formspree.io/f/mykoganw', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(res => {
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('intentStep').style.display = 'none';
+        document.getElementById('successMsg').classList.add('visible');
+      } else {
+        btn.disabled = false;
+        btn.style.opacity = '';
+        alert('Es ist ein Fehler aufgetreten. Bitte sende uns direkt eine E-Mail an info@skycampus.de');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      alert('Es ist ein Fehler aufgetreten. Bitte sende uns direkt eine E-Mail an info@skycampus.de');
+    });
   }
 </script>
 </body>
