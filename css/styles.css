@@ -263,25 +263,27 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 .sky-logo__right {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  line-height: 1.15;
+  gap: 3px;
+  line-height: 1;
 }
 .sky-logo__campus {
   font-family: 'Montserrat', sans-serif;
-  font-size: .68rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   color: rgba(255,255,255,.9);
   text-transform: uppercase;
+  line-height: 1;
   transition: var(--transition);
 }
 .sky-logo__happiness {
   font-family: 'Montserrat', sans-serif;
-  font-size: .68rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   color: rgba(255,255,255,.9);
   text-transform: uppercase;
+  line-height: 1;
   transition: var(--transition);
 }
 .nav.scrolled .sky-logo__campus,
