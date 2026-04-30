@@ -1071,6 +1071,29 @@ textarea { resize: vertical; min-height: 120px; }
 .animate-delay-4 { transition-delay: .4s; }
 .animate-delay-5 { transition-delay: .5s; }
 
+/* ── Impact Stats ── */
+.impact-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.impact-stat svg { display: block; }
+.impact-stat__number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #38bdf8;
+  line-height: 1;
+}
+.impact-stat__label {
+  font-size: .88rem;
+  color: rgba(255,255,255,.75);
+  line-height: 1.5;
+  max-width: 140px;
+}
+.impact-stat__label strong { color: #fff; }
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
