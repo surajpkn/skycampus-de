@@ -113,8 +113,8 @@ const TRANSLATIONS = {
     "home.research.p1":    "Das SKY-Programm ist keine Alternative zur Wissenschaft – es ist von ihr gemacht. Mehr als 100 peer-reviewed Studien an weltweit führenden Universitäten belegen die Wirksamkeit unserer Methoden.",
     "home.research.p2":    "Reduktion von Stress, Angst und Depression; Verbesserung von Fokus, Schlafqualität und sozialem Wohlbefinden – die Forschungsergebnisse sind eindeutig.",
     "home.research.btn":   "Forschung entdecken",
-    "home.research.h1":    "weniger Cortisol (Bhatia et al., 2003)",
-    "home.research.h2b":   "mehr Tiefschlaf (Sulekha et al., 2006)",
+    "home.research.h1":    "Forschungsuniversitäten weltweit",
+    "home.research.h2b":   "Programmteilnehmer weltweit",
     "home.research.h3":    "Peer-reviewed Studien",
     "home.research.h4":    "Jahre Forschungsgeschichte",
 
@@ -472,8 +472,8 @@ const TRANSLATIONS = {
     "home.research.p1":    "The SKY program is not an alternative to science — it is shaped by it. More than 100 peer-reviewed studies at leading universities worldwide demonstrate the effectiveness of our methods.",
     "home.research.p2":    "Reduction of stress, anxiety and depression; improvement of focus, sleep quality and social well-being — the research findings are clear.",
     "home.research.btn":   "Explore the Research",
-    "home.research.h1":    "less cortisol (Bhatia et al., 2003)",
-    "home.research.h2b":   "more deep sleep (Sulekha et al., 2006)",
+    "home.research.h1":    "Research universities worldwide",
+    "home.research.h2b":   "Program participants worldwide",
     "home.research.h3":    "Peer-reviewed Studies",
     "home.research.h4":    "Years of Research History",
 
