@@ -70,7 +70,7 @@ const TRANSLATIONS = {
 
     /* ── Home: Pillars ── */
     "home.pillars.label": "Unser Ansatz",
-    "home.pillars.h2":    "Die fünf Säulen des SKY-Programms",
+    "home.pillars.h2":    "Die Säulen des SKY-Programms",
     "home.pillars.sub":   "Ein holistischer Ansatz, der alle Dimensionen menschlichen Wohlbefindens adressiert – wissenschaftlich fundiert und praxiserprobt.",
     "home.p1.h3":  "Atemübungen & Meditation",
     "home.p1.p":   "Die Sudarshan Kriya – ein einzigartiges, rhythmisches Atemmuster – reinigt Körper und Geist auf tiefer zellulärer Ebene und erzeugt nachhaltige innere Ruhe.",
@@ -429,7 +429,7 @@ const TRANSLATIONS = {
 
     /* ── Home: Pillars ── */
     "home.pillars.label": "Our Approach",
-    "home.pillars.h2":    "The Five Pillars of the SKY Program",
+    "home.pillars.h2":    "The Pillars of the SKY Program",
     "home.pillars.sub":   "A holistic approach that addresses all dimensions of human well-being — science-based and practice-tested.",
     "home.p1.h3":  "Breathwork & Meditation",
     "home.p1.p":   "Sudarshan Kriya — a unique, rhythmic breathing pattern — cleanses body and mind at a deep cellular level, creating lasting inner peace.",
