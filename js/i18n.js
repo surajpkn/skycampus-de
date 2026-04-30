@@ -280,7 +280,7 @@ const TRANSLATIONS = {
     "res.cta.label": "Überzeug dich selbst",
     "res.cta.h2":    "Die beste Studie bist du selbst",
     "res.cta.p":     "Theorie ist gut – Erfahrung ist besser. Melde dich jetzt für ein kostenloses SKY Happiness Retreat an und erlebe die Wirkung am eigenen Leib.",
-    "res.cta.btn1":  "Jetzt kostenlos anmelden",
+    "res.cta.btn1":  "Zum nächsten SKY Happiness Retreat anmelden",
     "res.cta.btn2":  "Forschungspartner werden",
 
     /* ── Contact ── */
@@ -619,7 +619,7 @@ const TRANSLATIONS = {
     "res.cta.label": "See for Yourself",
     "res.cta.h2":    "The Best Study Is You",
     "res.cta.p":     "Theory is good — experience is better. Register now for a free SKY Happiness Retreat and feel the effect for yourself.",
-    "res.cta.btn1":  "Register for Free",
+    "res.cta.btn1":  "Register for the Next SKY Happiness Retreat",
     "res.cta.btn2":  "Become a Research Partner",
 
     /* ── Contact ── */
