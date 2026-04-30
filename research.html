@@ -53,26 +53,20 @@
       padding-top: 20px;
     }
     .study-card__finding {
-      border-left: 3px solid var(--sky);
-      padding: 10px 14px;
-      font-size: .875rem;
-      color: var(--navy);
-      font-weight: 600;
-      line-height: 1.55;
+      background: var(--off-white);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: .88rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.5;
       margin-bottom: 14px;
     }
-    .study-card.yale     .study-card__finding { border-color: #286DC0; }
-    .study-card.stanford .study-card__finding { border-color: #8C1515; }
-    .study-card.penn     .study-card__finding { border-color: #011F5B; }
-    .study-card.harvard  .study-card__finding { border-color: #A41034; }
-    .study-card.rwth     .study-card__finding { border-color: #006AB3; }
     .study-card__meta {
-      font-size: .73rem;
-      color: var(--grey-400, #9ca3af);
-      padding-top: 12px;
-      border-top: 1px solid var(--grey-100);
-      line-height: 1.6;
+      display: flex; gap: 12px; flex-wrap: wrap;
+      font-size: .75rem; color: var(--grey-500);
     }
+    .study-card__meta span { display: flex; align-items: center; gap: 4px; }
 
     .outcome-bar {
       display: flex; flex-direction: column; gap: 16px; margin-top: 32px;
