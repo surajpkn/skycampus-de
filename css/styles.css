@@ -244,7 +244,7 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 .sky-logo {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 7px;
   flex-shrink: 0;
   line-height: 1;
