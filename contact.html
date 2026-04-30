@@ -15,7 +15,6 @@
       padding: 28px;
       cursor: pointer;
       transition: var(--transition);
-      display: flex; gap: 16px; align-items: flex-start;
     }
     .option-card:hover, .option-card.selected {
       border-color: var(--sky);
@@ -23,11 +22,6 @@
       box-shadow: var(--shadow-sm);
     }
     .option-card.selected { background: rgba(0,150,199,.06); }
-    .option-card__icon {
-      font-size: 1.8rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
     .option-card__title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
     .option-card__sub   { font-size: .82rem; color: var(--grey-500); line-height: 1.5; }
 
@@ -174,28 +168,24 @@
 
             <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
               <div class="option-card" onclick="selectIntent(this,'Kursanmeldung')">
-                <div class="option-card__icon">🎓</div>
                 <div>
                   <div class="option-card__title" data-i18n="con.opt1.title">Kursanmeldung</div>
                   <div class="option-card__sub" data-i18n="con.opt1.sub">Ich möchte an einem SKY-Kurs teilnehmen und mehr über verfügbare Termine erfahren.</div>
                 </div>
               </div>
               <div class="option-card" onclick="selectIntent(this,'Hochschulpartnerschaft')">
-                <div class="option-card__icon">🏛️</div>
                 <div>
                   <div class="option-card__title" data-i18n="con.opt2.title">Hochschulpartnerschaft</div>
                   <div class="option-card__sub" data-i18n="con.opt2.sub">Ich vertreten eine Hochschule und möchte SKY Campus an unserer Institution einführen.</div>
                 </div>
               </div>
               <div class="option-card" onclick="selectIntent(this,'Trainer werden')">
-                <div class="option-card__icon">✨</div>
                 <div>
                   <div class="option-card__title" data-i18n="con.opt3.title">Trainer werden</div>
                   <div class="option-card__sub" data-i18n="con.opt3.sub">Ich interessiere mich für die Trainer-Ausbildung und möchte das Programm weitergeben.</div>
                 </div>
               </div>
               <div class="option-card" onclick="selectIntent(this,'Allgemeine Anfrage')">
-                <div class="option-card__icon">💬</div>
                 <div>
                   <div class="option-card__title" data-i18n="con.opt4.title">Allgemeine Anfrage</div>
                   <div class="option-card__sub" data-i18n="con.opt4.sub">Ich habe eine andere Frage oder möchte einfach mehr erfahren.</div>
