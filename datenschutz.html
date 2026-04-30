@@ -23,10 +23,10 @@
 <nav class="nav scrolled" id="nav" style="position:relative;background:rgba(255,255,255,.98);box-shadow:var(--shadow-sm)">
   <div class="nav__inner">
     <a href="index.html" class="nav__logo">
-      <div class="nav__logo-mark">SKY</div>
-      <div class="nav__logo-text">
-        <div class="nav__logo-name">SKY Campus Deutschland</div>
-        <div class="nav__logo-sub">e.V. · Aachen</div>
+      <div class="sky-logo">
+        <div class="sky-logo__sky">sky</div>
+        <div class="sky-logo__campus">CAMPUS</div>
+        <div class="sky-logo__country">GERMANY</div>
       </div>
     </a>
     <ul class="nav__links">
@@ -36,7 +36,21 @@
       <li><a href="research.html" class="nav__link">Forschung</a></li>
       <li><a href="contact.html" class="nav__link">Kontakt</a></li>
     </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="nav__mobile" id="mobileNav">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="about.html" class="nav__link">Über uns</a>
+    <a href="programs.html" class="nav__link">Programme</a>
+    <a href="research.html" class="nav__link">Forschung</a>
+    <a href="contact.html" class="nav__link">Kontakt</a>
+    <div class="lang-switcher" style="margin-top:8px;background:var(--grey-100);align-self:flex-start">
+      <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
 </nav>
 
 <main class="legal-content">
