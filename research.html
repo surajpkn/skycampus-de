@@ -16,6 +16,8 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .study-card::before {
       content: '';
@@ -54,6 +56,7 @@
       color: var(--text);
       font-weight: 500;
       margin-bottom: 16px;
+      margin-top: auto;
     }
     .study-card__finding strong { color: var(--sky); }
     .study-card__meta {
