@@ -220,7 +220,7 @@ const TRANSLATIONS = {
     /* ── Research ── */
     "res.hero.label": "Wissenschaftliche Grundlage",
     "res.hero.h1":    "Forschung, die für sich spricht",
-    "res.hero.p":     "Über 100 peer-reviewed Studien an führenden Universitäten weltweit belegen die Wirksamkeit des SKY-Programms. Keine Annahmen – nur Evidenz.",
+    "res.hero.p":     "Über 100 peer-reviewed Studien an führenden Universitäten weltweit belegen die Wirksamkeit des SKY-Programms.",
     "res.outcomes.label": "Messergebnisse",
     "res.outcomes.h2":    "Was die Studien zeigen",
     "res.outcomes.p":     "Die Forschungsergebnisse sind konsistent und replizierbar: SKY-Praktiken führen zu messbaren Verbesserungen in allen zentralen Wohlbefindensdimensionen.",
@@ -520,7 +520,7 @@ const TRANSLATIONS = {
     /* ── Research ── */
     "res.hero.label": "Scientific Foundation",
     "res.hero.h1":    "Research That Speaks for Itself",
-    "res.hero.p":     "Over 100 peer-reviewed studies at leading universities worldwide demonstrate the effectiveness of the SKY program. No assumptions — just evidence.",
+    "res.hero.p":     "Over 100 peer-reviewed studies at leading universities worldwide demonstrate the effectiveness of the SKY program.",
     "res.outcomes.label": "Measured Results",
     "res.outcomes.h2":    "What the Studies Show",
     "res.outcomes.p":     "Research findings are consistent and replicable: SKY practices lead to measurable improvements across all key well-being dimensions.",
