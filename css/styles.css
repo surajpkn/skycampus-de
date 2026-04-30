@@ -288,17 +288,18 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 .nav.scrolled .sky-logo__happiness { color: var(--sky); }
 
 .sky-logo__badge {
-  display: inline-block;
+  display: block;
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
   background: var(--sky);
   color: var(--white);
   font-size: .58rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .10em;
   text-transform: uppercase;
-  padding: 2px 6px;
+  padding: 3px 6px;
   border-radius: 2px;
-  margin-top: 2px;
+  margin-top: 3px;
   line-height: 1.4;
   transition: var(--transition);
 }
