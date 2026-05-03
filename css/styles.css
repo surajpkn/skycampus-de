@@ -231,6 +231,7 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
   padding: 0 40px;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
 }
 .nav__logo {
   display: flex;
@@ -343,11 +344,13 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 .nav__links {
   display: flex;
   align-items: center;
-  align-self: center;
   gap: 4px;
   list-style: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .nav__link {
   padding: 8px 16px;
