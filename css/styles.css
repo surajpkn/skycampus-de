@@ -316,6 +316,14 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 .footer .sky-logo__happiness { color: var(--white); opacity: .85; }
 .footer .sky-logo__badge     { background: var(--sky); color: var(--white); }
 
+/* image logo */
+.nav-logo-img { display: flex; align-items: center; }
+.nav-logo-img img { height: 44px; width: auto; display: block; }
+.logo--dark { display: none; }
+.logo--light { display: block; }
+.nav.scrolled .logo--light { display: none; }
+.nav.scrolled .logo--dark { display: block; }
+
 /* legacy fallback */
 .nav__logo-img { height: 52px; width: auto; flex-shrink: 0; display: block; }
 .nav__logo-mark {
