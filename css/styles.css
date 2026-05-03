@@ -318,7 +318,8 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 
 /* image logo */
 .nav-logo-img { display: flex; align-items: center; }
-.nav-logo-img img { height: 44px; width: auto; }
+.nav-logo-img img { height: 64px; width: auto; }
+.footer .nav-logo-img img { height: 80px; width: auto; }
 .nav-logo-img img.logo--dark { display: none; }
 .nav-logo-img img.logo--light { display: block; }
 .nav.scrolled .nav-logo-img img.logo--light { display: none; }
