@@ -318,11 +318,11 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 
 /* image logo */
 .nav-logo-img { display: flex; align-items: center; }
-.nav-logo-img img { height: 44px; width: auto; display: block; }
-.logo--dark { display: none; }
-.logo--light { display: block; }
-.nav.scrolled .logo--light { display: none; }
-.nav.scrolled .logo--dark { display: block; }
+.nav-logo-img img { height: 44px; width: auto; }
+.nav-logo-img img.logo--dark { display: none; }
+.nav-logo-img img.logo--light { display: block; }
+.nav.scrolled .nav-logo-img img.logo--light { display: none; }
+.nav.scrolled .nav-logo-img img.logo--dark { display: block; }
 
 /* legacy fallback */
 .nav__logo-img { height: 52px; width: auto; flex-shrink: 0; display: block; }
