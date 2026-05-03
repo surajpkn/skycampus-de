@@ -227,7 +227,7 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 100px;
   padding: 0 40px;
   max-width: 1400px;
   margin: 0 auto;
@@ -318,8 +318,8 @@ p  { font-size: 1.05rem; color: var(--grey-800); }
 
 /* image logo */
 .nav-logo-img { display: flex; align-items: center; }
-.nav-logo-img img { height: 64px; width: auto; }
-.footer .nav-logo-img img { height: 80px; width: auto; }
+.nav-logo-img img { height: 88px; width: auto; }
+.footer .nav-logo-img img { height: 110px; width: auto; }
 .nav-logo-img img.logo--dark { display: none; }
 .nav-logo-img img.logo--light { display: block; }
 .nav.scrolled .nav-logo-img img.logo--light { display: none; }
